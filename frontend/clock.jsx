@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-//<h1>It is {this.state.date.toLocaleTimeString()}</h1>
-
 class Clock extends React.Component {
   constructor(props) {
     super(props);
@@ -30,7 +28,8 @@ class Clock extends React.Component {
   render() {
     return (
       <div>
-        <h1>{this.state.date.toString().substr(16, 8)}</h1>
+        <h1>Time: {this.state.date.toString().substr(16, 8) + ' ' + this.state.date.toString().substr(35, 3)}</h1>
+        <h1>Date: {this.state.date.toString().substr(0, 15)}</h1>
       </div>
     );
   }
