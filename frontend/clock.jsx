@@ -14,7 +14,7 @@ class Clock extends React.Component {
   //once the component is rendered on the page, use setInterval to initialize
   //a new date (via tick method) every second
   componentDidMount() {
-    this.setInterval(() => this.tick(), 1000);
+    this.TimerID = setInterval(() => this.tick(), 1000);
   }
 
   tick() {
@@ -23,11 +23,14 @@ class Clock extends React.Component {
     });
   }
 
+  componentWillUnmount() {
+    clearInterval(this.TimerID);
+  }
 
   render() {
     return (
       <div>
-
+        <h1>{this.state.date.toString().substr(16, 8)}</h1>
       </div>
     );
   }
