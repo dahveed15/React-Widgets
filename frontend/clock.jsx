@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
+//<h1>It is {this.state.date.toLocaleTimeString()}</h1>
+
 class Clock extends React.Component {
   constructor(props) {
     super(props);
@@ -9,13 +11,17 @@ class Clock extends React.Component {
     };
   }
 
-
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
 
 
   render() {
     return (
       <div>
-        <h1>It is {this.state.date.toLocaleTimeString()}</h1>
+
       </div>
     );
   }
